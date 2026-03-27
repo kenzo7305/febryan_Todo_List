@@ -4,13 +4,11 @@ import 'package:todo_list_app/security/security_login.dart';
 
 class RegisterPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
-
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
-
   final obscurePassword = true.obs;
   final obscureConfirm = true.obs;
 
@@ -64,7 +62,6 @@ class RegisterPage extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-
                       SizedBox(height: 20),
 
                       // 👤 NAMA
@@ -84,7 +81,6 @@ class RegisterPage extends StatelessWidget {
                           return null;
                         },
                       ),
-
                       SizedBox(height: 15),
 
                       // 📧 EMAIL
@@ -99,7 +95,6 @@ class RegisterPage extends StatelessWidget {
                         ),
                         validator: Validasi.validasiEmail,
                       ),
-
                       SizedBox(height: 15),
 
                       // 🔒 PASSWORD
@@ -123,7 +118,6 @@ class RegisterPage extends StatelessWidget {
                             ),
                             validator: Validasi.validasiPassword,
                           )),
-
                       SizedBox(height: 15),
 
                       // 🔒 CONFIRM PASSWORD
@@ -155,7 +149,6 @@ class RegisterPage extends StatelessWidget {
                               return null;
                             },
                           )),
-
                       SizedBox(height: 20),
 
                       // 🔘 REGISTER BUTTON

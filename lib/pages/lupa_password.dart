@@ -21,7 +21,6 @@ class ForgotPasswordPage extends StatelessWidget {
                   children: [
 
                     //  EMAIL
-                    
                     if (!controller.isOtpSent.value) ...[
                       TextFormField(
                         controller: controller.emailController,
@@ -32,27 +31,21 @@ class ForgotPasswordPage extends StatelessWidget {
                         ),
                         validator: Validasi.validasiEmail,
                       ),
-
                       SizedBox(height: 20),
-
                       ElevatedButton(
                         onPressed: controller.sendOtp,
                         child: Text("Kirim OTP"),
                       ),
                     ],
 
-                   
                    // OTP
-                   
                     if (controller.isOtpSent.value &&
                         !controller.isOtpVerified.value) ...[
                       Text(
                         "Masukkan OTP yang dikirim ke email",
                         style: TextStyle(fontSize: 16),
                       ),
-
                       SizedBox(height: 15),
-
                       TextFormField(
                         controller: controller.otpController,
                         keyboardType: TextInputType.number,
@@ -75,9 +68,7 @@ class ForgotPasswordPage extends StatelessWidget {
                           return null;
                         },
                       ),
-
                       SizedBox(height: 15),
-
                       ElevatedButton(
                         onPressed: () {
                           if (controller.formKey.currentState!.validate()) {
@@ -89,15 +80,12 @@ class ForgotPasswordPage extends StatelessWidget {
                     ],
 
                    // PASSWORD BARU
-                   
                     if (controller.isOtpVerified.value) ...[
                       Text(
                         "Masukkan Password Baru",
                         style: TextStyle(fontSize: 16),
                       ),
-
                       SizedBox(height: 15),
-
                       TextFormField(
                         controller: controller.newPasswordController,
                         obscureText: true,
@@ -108,9 +96,7 @@ class ForgotPasswordPage extends StatelessWidget {
                         ),
                         validator: Validasi.validasiPassword,
                       ),
-
                       SizedBox(height: 15),
-
                       ElevatedButton(
                         onPressed: () {
                           if (controller.formKey.currentState!.validate()) {

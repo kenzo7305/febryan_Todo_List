@@ -6,20 +6,15 @@ import 'register_page.dart';
 import 'package:todo_list_app/controller/lupa_password_controller.dart';
 import 'package:todo_list_app/pages/lupa_password.dart';
 
-
 class LoginPages extends StatelessWidget {
 
   //_formKey validasi form
   //  controller → ambil isi input
   // obs → buat UI berubah otomatis (GetX)
   final _formKey = GlobalKey<FormState>();
-
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
   final obscureText = true.obs;
-
-  
 
   void togglePassword() {
     obscureText.value = !obscureText.value;
@@ -27,14 +22,11 @@ class LoginPages extends StatelessWidget {
 
   void login() {
     if (_formKey.currentState!.validate()) {
-      
       Get.snackbar(
         "Sukses",
         "Login berhasil",
         snackPosition: SnackPosition.BOTTOM,
       );
-
-     
       Get.to(() => HomePage());
     }
   }
